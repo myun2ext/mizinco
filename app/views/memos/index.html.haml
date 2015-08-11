@@ -1,0 +1,21 @@
+%h1 Listing memos
+
+%table
+  %thead
+    %tr
+      %th Memo
+      %th
+      %th
+      %th
+
+  %tbody
+    - @memos.each do |memo|
+      %tr
+        %td= memo.memo
+        %td= link_to 'Show', memo
+        %td= link_to 'Edit', edit_memo_path(memo)
+        %td= link_to 'Destroy', memo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Memo', new_memo_path
