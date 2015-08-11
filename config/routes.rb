@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :youtubes
   resources :memos
   root 'home#index'
   devise_for :users

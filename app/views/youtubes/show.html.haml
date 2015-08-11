@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Url:
+  = @youtube.url
+%p
+  %b Title:
+  = @youtube.title
+%p
+  %b Hash:
+  = @youtube.hash
+
+= link_to 'Edit', edit_youtube_path(@youtube)
+\|
+= link_to 'Back', youtubes_path

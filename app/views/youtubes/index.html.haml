@@ -1,0 +1,25 @@
+%h1 Listing youtubes
+
+%table
+  %thead
+    %tr
+      %th Url
+      %th Title
+      %th Hash
+      %th
+      %th
+      %th
+
+  %tbody
+    - @youtubes.each do |youtube|
+      %tr
+        %td= youtube.url
+        %td= youtube.title
+        %td= youtube.hash
+        %td= link_to 'Show', youtube
+        %td= link_to 'Edit', edit_youtube_path(youtube)
+        %td= link_to 'Destroy', youtube, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Youtube', new_youtube_path
