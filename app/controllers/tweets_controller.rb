@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
 
   # GET /tweets
@@ -69,6 +70,7 @@ class TweetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tweet_params
-      params.require(:tweet).permit(:tweet)
+      twp = params.require(:tweet).permit(:tweet)
+      twp.user = current_user
     end
 end
