@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { sessions: "users/sessions" }
+
   resources :tweets
   resources :youtubes
   resources :memos
   root 'home#index'
-  devise_for :users
 
   namespace :admin do
   end
