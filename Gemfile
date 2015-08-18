@@ -6,6 +6,8 @@ gem 'rails', '4.2.3'
 
 gem 'haml-rails'
 
+gem 'rails_12factor' # heroku debug log output
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
