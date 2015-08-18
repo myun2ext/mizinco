@@ -1,17 +1,19 @@
-%h1 Listing tweets
+%h1 Tweets
 
 %table
   %thead
     %tr
+      %th Name
       %th Tweet
-      %th
-      %th
+      %th tweeted at
       %th
 
   %tbody
     - @tweets.each do |tweet|
       %tr
+        %td= tweet.user.name
         %td= tweet.tweet
+        %td= tweet.created_at.in_time_zone("Tokyo")
         %td= link_to 'Show', tweet
         %td= link_to 'Edit', edit_tweet_path(tweet)
         %td= link_to 'Destroy', tweet, :method => :delete, :data => { :confirm => 'Are you sure?' }
