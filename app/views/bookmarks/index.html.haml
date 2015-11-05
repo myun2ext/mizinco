@@ -1,0 +1,27 @@
+%h1 Listing bookmarks
+
+%table
+  %thead
+    %tr
+      %th Url
+      %th
+      %th
+      %th
+
+  %tbody
+    - @bookmarks.each do |bookmark|
+      %tr
+        %td= link_to bookmark.title, bookmark.url
+        %td= bookmark.tags
+        %td
+          (
+          %span>= link_to 'Edit', edit_bookmark_path(bookmark)
+          )
+        %td
+          (
+          %span>= link_to 'Destroy', bookmark, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          )
+
+%br
+
+= link_to 'New Bookmark', new_bookmark_path
