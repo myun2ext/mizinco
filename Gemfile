@@ -32,6 +32,8 @@ gem 'devise'
 
 gem 'bootstrap-sass'
 
+gem 'paperclip'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
